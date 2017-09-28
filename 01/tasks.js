@@ -5,11 +5,17 @@
  * '1 и 6.45, -2, но 8, а затем 15, то есть 2.7 и -1028' => { min: -1028, max: 15 }
  */
 function getMinMax(string) {
-  var result = string.match(/(-)?\d+(\.\d+)?/g);
-  var min = parseFloat(result[0]);
-  var max = parseFloat(result[0]);
+  let result = string.match(/(-)?\d+(\.\d+)?/g);
 
-  for (var i = 1; i < result.length; ++i) {
+  if (result === null) {
+    min = -Infinity;
+    max = Infinity;
+    return { min, max };
+  }
+  let min = parseFloat(result[0]);
+  let max = parseFloat(result[0]);
+
+  for (let i = 1; i < result.length; ++i) {
     if (parseFloat(result[i]) < min) {
       min = parseFloat(result[i]);
     }
@@ -30,7 +36,8 @@ function getMinMax(string) {
 function fibonacciSimple(x) {
   if (x === 0) {
     return 0;
-  } else if (x === 1) {
+  }
+  if (x === 1) {
     return 1;
   }
   return fibonacciSimple(x - 1) + fibonacciSimple(x - 2);
@@ -44,7 +51,7 @@ function fibonacciSimple(x) {
  * @param {number} x номер числа
  * @return {number} число под номером х
  */
-var fibonacciNumbers = [];
+let fibonacciNumbers = [];
 
 fibonacciNumbers.push(0);
 fibonacciNumbers.push(1);
@@ -52,10 +59,12 @@ fibonacciNumbers.push(1);
 function fibonacciWithCache(x) {
   if (x === 0) {
     return x;
-  } else if (x === 1) {
+  }
+  if (x === 1) {
     return x;
-  } else if (fibonacciNumbers.length <= x) {
-    var xNumber = fibonacciWithCache(x - 1) + fibonacciWithCache(x - 2);
+  }
+  if (fibonacciNumbers.length <= x) {
+    let xNumber = fibonacciWithCache(x - 1) + fibonacciWithCache(x - 2);
 
     fibonacciNumbers.push(xNumber);
     return xNumber;
@@ -81,11 +90,11 @@ function fibonacciWithCache(x) {
  * @return {string}
  */
 function matrixArray(rows, columns) {
-  var arr = [];
+  const arr = [];
 
-  for (var i = 0; i < columns; i++) {
+  for (let i = 0; i < columns; i++) {
     arr[i] = [];
-    for (var j = 0; j < rows; j++) {
+    for (let j = 0; j < rows; j++) {
       arr[i][j] = columns * j + i;
     }
   }
@@ -93,12 +102,12 @@ function matrixArray(rows, columns) {
 }
 
 function printNumbers(max, cols) {
-  var rows = Math.floor(max / cols + 1);
-  var str = '';
-  var myMatrix = matrixArray(cols, rows);
+  let rows = Math.floor(max / cols + 1);
+  let str = '';
+  let myMatrix = matrixArray(cols, rows);
 
-  for (var i = 0; i < rows; ++i) {
-    for (var j = 0; j < cols; ++j) {
+  for (let i = 0; i < rows; ++i) {
+    for (let j = 0; j < cols; ++j) {
       if (myMatrix[i][j] > max) {
         str += '';
       } else if (myMatrix[i][j] < 10 && j === 0) {
@@ -127,12 +136,12 @@ function printNumbers(max, cols) {
  */
 
 function rle(input) {
-  var count = 0;
-  var rleString = '';
-  var thisChar = input[0];
-  var symbol;
+  let count = 0;
+  let rleString = '';
+  let thisChar = input[0];
+  let symbol;
 
-  for (var i = 0; i < input.length; ++i) {
+  for (let i = 0; i < input.length; ++i) {
     symbol = input.charAt(i);
     if ((thisChar !== symbol)) {
       rleString += thisChar + ((count > 1) ? count : '');
