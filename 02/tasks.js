@@ -3,9 +3,12 @@
  * Доп. задание: предложите несколько вариантов решения.
  */
 function timer(logger = console.log) {
-  for (var i = 0; i < 10; i++) {
+  for (let i = 0; i < 10; i++) {
+    let bound = logger.bind({
+      ind: i
+    });
     setTimeout(() => {
-      logger(i);
+      bound(i);
     }, 100);
   }
 }
@@ -20,7 +23,9 @@ function timer(logger = console.log) {
  * @return {Function} функция с нужным контекстом
  */
 function customBind(func, context, ...args) {
-
+  return () => {
+    return func.call(func, context, args);
+  }
 }
 
 /*= ============================================ */
@@ -33,8 +38,20 @@ function customBind(func, context, ...args) {
  * sum :: void -> Number
  */
 function sum(x) {
-  return 0;
+  if (x === undefined) {
+    return 0;
+  }
+  let result = x;
+  return function prevSum(y) {
+    if (y === undefined) {
+      return result;
+    } else {
+      result += y;
+      return prevSum;
+    }
+  }
 }
+
 
 /*= ============================================ */
 
@@ -45,6 +62,9 @@ function sum(x) {
  * @return {boolean}
  */
 function anagram(first, second) {
+  if (first.split('').sort().join('') === second.split('').sort().join('')) {
+    return true;
+  }
   return false;
 }
 
@@ -57,7 +77,21 @@ function anagram(first, second) {
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getUnique(arr) {
-  return [];
+  const result = [];
+  let comparator = (a, b) => {
+    return a - b;
+  };
+  arr.sort(comparator);
+  arr.forEach(function getU(item, i) {
+    if (i !== 0) {
+      if (arr[i - 1] < item) {
+        result.push(item);
+      }
+    } else {
+      result.push(item);
+    }
+  });
+  return result;
 }
 
 /**
@@ -67,7 +101,25 @@ function getUnique(arr) {
  * @return {Array<number>} массив уникальных значений, отсортированный по возрастанию
  */
 function getIntersection(first, second) {
-  return [];
+  const result = [];
+  let comparator = (a, b) => {
+    return a - b;
+  };
+  first.sort(comparator);
+  second.sort(comparator);
+  let i = 0, j = 0;
+  while (i < first.length && j < second.length) {
+    if (first[i] < second[j]) {
+      ++i;
+    } else if (second[j] < first[i]) {
+      ++j;
+    } else {
+      result.push(first[i])
+      ++i;
+      ++j;
+    }
+  }
+  return result;
 }
 
 /* ============================================= */
@@ -86,7 +138,19 @@ function getIntersection(first, second) {
  * @return {boolean}
  */
 function isIsomorphic(left, right) {
-
+  if (left.length === right.length) {
+    let counter = 0;
+    for (let i = 0; i < left.length; ++i) {
+      if (left[i] !== right[i]) {
+        ++counter;
+      }
+    }
+    if (counter > 1) {
+      return false;
+    }
+    return true;
+  }
+  return false;
 }
 
 module.exports = {
