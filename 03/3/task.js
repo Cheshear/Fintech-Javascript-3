@@ -8,7 +8,8 @@
 function promiseAll(promises) {
   return new Promise((resolve, reject) => {
     let arr = [];
-    counter = 0;
+    let counter = 0;
+
     promises.forEach((promise, i) => {
       promise.then(
         (value) => {
