@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+h1{
+    font-family: Roboto Condensed;
+}
+body{
+    width: 960px;
+    text-align: center;
+    margin: auto;
+}
+p{
+    font-family: Roboto;
+}
+h2{
+    font-family: Roboto Condensed;
+}
+img{
+    width: 100%;
+}
+a:link{
+    text-decoration: none;
+}
+a:visited{
+    color: darkmagenta;
+    text-decoration: blink;
+}
+a:hover{
+    text-decoration: underline; /* Делает ссылку подчеркнутой при наведении на нее курсора */
+    color: blueviolet; /* Цвет ссылки */
+}
+
