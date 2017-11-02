@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-size: 16px;
+}
+
+.wrap-menu {
+    height: 65px;;
+    background-color: #3e4757;
+    padding:0 18px;
+}
+
+a {
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.9px;
+    color: #ffffff;
+    padding:26px 0 20px;
+    line-height: 1.39;
+}
+
+.menu{
+    max-width: 1080px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    list-style: none;
+    font-size: 13px;
+    padding:26px 0 20px;
+}
+
+a:hover{
+    text-decoration: none;
+    border-bottom: 3px solid #ffdd2d;
+}
+

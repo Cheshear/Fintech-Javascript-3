@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="task4.css" rel="stylesheet">
+</head>
+<body>
+<form action="#" name="user-form">
+    <div class="form-item">
+        <label class="form-item-label" for="full-name">ФИО</label>
+        <input type="text" id="full-name" class="form-item-input" required>
+        <div class="warnig"></div>
+        <div class="error">Для заполнения этого поля не допустимо использовать буквы латинского алфавита</div>
+    </div>
+    <div class="form-item">
+        <label class="form-item-label" for="location">Город проживания</label>
+        <input type="text" id="location" class="form-item-input" required>
+    </div>
+    <div class="form-item">
+        <label class="form-item-label" for="mobile-form">Мобильный телефон</label>
+        <input type="tel" id="mobile-form" class="form-item-input" required>
+    </div>
+    <div class="form-item">
+        <label class="form-item-label" for="email">Электронная почта</label>
+        <input type="text" id="email" class="form-item-input" required>
+        <div class="help">
+            <p class="help-text">
+                Ваши данные замаскированы в целях безопасности. Для изменения информации с вами свяжется оператор колл-центра.
+            </p>
+        </div>
+    </div>
+    <div class="selector_header">Выберите это или другое</div>
+
+    <div class="selector">
+        <div class="selector-item">
+            <label class="selector-label" for="this">Это</label>
+            <input type="radio" id="this" class="selector-radio" name="selector" checked>
+
+        </div>
+        <div class="selector-item">
+            <label class="selector-label" for="other">Другое</label>
+            <input type="radio" id="other" class="selector-radio" name="selector">
+        </div>
+    </div>
+
+    <button class="primary-button" type="submit">Отправить</button>
+</form>
+</body>
+</html>
