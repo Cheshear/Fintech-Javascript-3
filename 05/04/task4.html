@@ -30,24 +30,20 @@
             </p>
         </div>
     </div>
-    <fieldset class="fieldset">
-        <legend class="selector_header">Выберите это или другое</legend>
+    <div class="selector_header">Выберите это или другое</div>
 
-        <div class="selector">
-            <div class="selector-item">
-                <label class="selector-label" for="this">Это
-                    <input type="radio" id="this" class="selector-radio" name="selector" checked>
-                    <span class="selector-checked"></span>
-                </label>
-            </div>
-            <div class="selector_item">
-                <label class="selector-label" for="other">Другое
-                    <input type="radio" id="other" class="selector-radio" name="selector">
-                    <span class="selector-checked"></span>
-                </label>
-            </div>
+    <div class="selector">
+        <div class="selector-item">
+            <label class="selector-label" for="this">Это</label>
+            <input type="radio" id="this" class="selector-radio" name="selector" checked>
+
         </div>
-    </fieldset>
+        <div class="selector-item">
+            <label class="selector-label" for="other">Другое</label>
+            <input type="radio" id="other" class="selector-radio" name="selector">
+        </div>
+    </div>
+
     <button class="primary-button" type="submit">Отправить</button>
 </form>
 </body>

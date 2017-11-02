@@ -124,34 +124,59 @@ form{
     display: block;
 }
 
+.selector_header{
+    font-family: 'Roboto', sans-serif;
+    width: 245px;
+    height: 24px;
+    font-size: 21px;
+    font-weight: 300;
+    text-align: center;
+    color: #333333;
+    margin-left: 148px;
+    margin-right: 147px;
+    white-space: nowrap;
+    margin-top: 30px;
+}
+
 .selector{
     display: flex;
-    flex-wrap: wrap;
-    margin: 0 -12px;
+    justify-content: center;
+    margin-top: 27px;
+}
+
+.selector-item+.selector-item{
+    margin-left: 10px;
+    margin-top: 27px;
 }
 
 .selector-item{
-    height: 66px;
+    width: 258px;
     border-radius: 6px;
     background-color: #ffffff;
     border: solid 1px #dddfe0;
-    padding: 23px 20px;
-    position: relative;
-    width: 258px;
-    color: #333333;
+    margin-top: 27px;
+    padding-bottom: 21px;
+    padding-top: 25px;
     text-align: left;
+}
+
+.selector-label{
+    height: 20px;
+    font-family: 'Roboto', sans-serif;
     font-size: 17px;
-    line-height: 1.18;
+    color: #333333;
+    margin-left: 18px;
+
 }
 
 
-
 .primary-button{
-    margin: 170px;
+    margin: 50px;
     width: 258px;
     height: 66px;
     text-align: center;
     color: #333333;
     border-radius: 6px;
+    border-style: none;
     background-color: #ffdd2d;
 }
